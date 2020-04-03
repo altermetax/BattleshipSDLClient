@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/BattleshipSDLClient.dir/src/game.c.o CMakeFiles/BattleshipSDLClient.dir/src/load.c.o CMakeFiles/BattleshipSDLClient.dir/src/main.c.o CMakeFiles/BattleshipSDLClient.dir/src/network.c.o CMakeFiles/BattleshipSDLClient.dir/src/scenes.c.o CMakeFiles/BattleshipSDLClient.dir/src/ship.c.o  -o BattleshipSDLClient  -lSDL2 -lSDL2_net -lSDL2_ttf 
