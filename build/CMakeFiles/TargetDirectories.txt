@@ -1,3 +1,0 @@
-/data/Development/BattleshipSDL/BattleshipSDLClient/build/CMakeFiles/rebuild_cache.dir
-/data/Development/BattleshipSDL/BattleshipSDLClient/build/CMakeFiles/BattleshipSDLClient.dir
-/data/Development/BattleshipSDL/BattleshipSDLClient/build/CMakeFiles/edit_cache.dir
