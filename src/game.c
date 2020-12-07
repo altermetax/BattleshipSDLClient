@@ -243,6 +243,7 @@ void renderShip(Ship* ship, Uint8 alphaMod, int x, int y, int xOffset, int yOffs
 	}
 }
 
+// TODO: refactor this beast of a function
 unsigned char handleShipPlacement(int xOffset, int yOffset, int gridWidth, int gridHeight, char state) {
 	if(globalShips[currentShip] == NULL) return 0; // Ignore if ship doesn't exist (probably we're waiting for network thread right now)
 
@@ -272,11 +273,8 @@ unsigned char handleShipPlacement(int xOffset, int yOffset, int gridWidth, int g
 		globalShips[currentShip]->x = shipX - 2;
 		globalShips[currentShip]->y = shipY - 2;
 
-		if(state & MOUSE_RIGHT_PRESSED) { // Rotate ship
+		if(state & MOUSE_RIGHT_PRESSED) // Rotate ship
 			changeShipRotation(globalShips[currentShip], 5);
-			handleShipPlacement(xOffset, yOffset, gridWidth, gridHeight, state & ~MOUSE_RIGHT_PRESSED);
-			return 0;
-		}
 
 		if(state & MOUSE_LEFT_PRESSED) { // Place ship (if doesn't collide with other placed ships) & switch to next one
 			if(!checkCollisionWithPlacedShips(globalShips[currentShip])) {
