@@ -95,7 +95,10 @@ char runShipWaitingScene() {
 	drawGridCoords(0, 0, 0);
 	drawGridCoords(gridWidth + squareWidth, 0, 1);
 	drawPlacedShips(squareWidth, squareHeight);
-	setStatusBar(WAIT_SHIPS_MSG);
+
+	char status[256];
+	sprintf(status, WAIT_SHIPS_MSG, opponentNickname);
+	setStatusBar(status);
 	
 	SDL_RenderPresent(renderer);
 
@@ -153,7 +156,10 @@ char runTurnWaitingScene() {
 	drawPlacedShips(squareWidth, squareHeight);
 	drawHitmap(ownHitmap, squareWidth, squareHeight);
 	drawHitmap(opponentHitmap, gridWidth + 2 * squareWidth, squareHeight);
-	setStatusBar(WAIT_TURN_MSG);
+
+	char status[256];
+	sprintf(status, WAIT_TURN_MSG, opponentNickname);
+	setStatusBar(status);
 	
 	SDL_RenderPresent(renderer);
 

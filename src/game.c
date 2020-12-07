@@ -334,7 +334,9 @@ unsigned char handleShipPlacement(int xOffset, int yOffset, int gridWidth, int g
 		}
 	}
 	else {
-		setStatusBar(PLACE_SHIPS_MSG);
+		char status[256];
+		sprintf(status, PLACE_SHIPS_MSG, opponentNickname);
+		setStatusBar(status);
 	}
 	return 0;
 }

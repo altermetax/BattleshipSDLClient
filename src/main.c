@@ -29,6 +29,10 @@ int main(int argc, char** argv) {
 			printf("Using server %s:%ld\n", serverAddress, serverPort);
 		}
 		nickname = argv[1];
+		if(strlen(nickname) > 15) {
+			printf("Nickname must be at most 15 characters.\n");
+			printUsageAndQuit(argv[0]);
+		}
 	}
 
 	init();
