@@ -5,7 +5,7 @@
 #include "game.h"
 
 void printUsageAndQuit(char* programName) {
-	fprintf(stderr, "Usage: %s <address> <port>\n", programName);
+	fprintf(stderr, "Usage: %s <nickname> [<address> <port>]\nDefault address and port are localhost and 9098.\n", programName);
 	exit(1);
 }
 
@@ -15,18 +15,21 @@ int main(int argc, char** argv) {
 	cols = 10;
 	rows = 10;
 
-	if(argc == 1) {
-	    serverAddress = "localhost";
-	    serverPort = 9098;
-	    printf("Using default server localhost:9098\nUse %s <address> <port> for custom server.\n", argv[0]);
-	}
+	if(argc == 1 || argc == 3 || argc > 4) printUsageAndQuit(argv[0]);
 	else {
-        if(argc != 3) printUsageAndQuit(argv[0]);
-        serverAddress = argv[1];
-        serverPort = strtol(argv[2], NULL, 10);
-        if(serverPort <= 0) printUsageAndQuit(argv[0]);
-        printf("Using server %s:%ld\n", serverAddress, serverPort);
-    }
+		if(argc == 2) { // Only nickname provided
+			serverAddress = "localhost";
+			serverPort = 9098;
+			printf("Using default server localhost:9098\nUse %s <address> <port> for custom server.\n", argv[0]);
+		}
+		else {
+			serverAddress = argv[2];
+			serverPort = strtol(argv[3], NULL, 10);
+			if(serverPort < 1 || serverPort > 65535) printUsageAndQuit(argv[0]);
+			printf("Using server %s:%ld\n", serverAddress, serverPort);
+		}
+		nickname = argv[1];
+	}
 
 	init();
 	gameLoop();

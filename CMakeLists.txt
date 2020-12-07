@@ -6,6 +6,7 @@ set(CMAKE_C_STANDARD 11)
 include_directories(include)
 
 add_executable(BattleshipSDLClient
+        src/globals.c
         src/game.c
         src/load.c
         src/main.c

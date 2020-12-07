@@ -6,48 +6,48 @@
 
 #define PROTOCOL_VERSION "1.0"
 #define NUMBER_OF_SHIPS 5
-#define NICKNAME "altermetaxxo"
 
-SDL_Window* window;
-SDL_Renderer* renderer;
-SDL_Texture* gridSquareA;
-SDL_Texture* gridSquareB;
-SDL_Texture* mouseOverlay;
-SDL_Texture* shipFront;
-SDL_Texture* shipMiddle;
-SDL_Texture* shipBack;
-SDL_Texture* hitOverlay;
-SDL_Texture* missedOverlay;
-Ship* destroyer;
-Ship* submarine;
-Ship* cruiser;
-Ship* battleship;
-Ship* carrier;
-Ship* globalShips[NUMBER_OF_SHIPS];
-Ship* ships[NUMBER_OF_SHIPS];
-TTF_Font* mainFont;
-SDL_Texture** gridColLabels;
-SDL_Texture** gridRowLabels;
-int screenWidth;
-int screenHeight;
-int squareWidth;
-int squareHeight;
-int cols;
-int rows;
-unsigned char currentShip;
-unsigned char currentScene;
-SDL_Thread* networkThread;
-char* serverAddress;
-long int serverPort;
-TCPsocket serverSocket;
-SDLNet_SocketSet socketSet;
-char opponentNickname[64];
+extern char* nickname;
+extern SDL_Window* window;
+extern SDL_Renderer* renderer;
+extern SDL_Texture* gridSquareA;
+extern SDL_Texture* gridSquareB;
+extern SDL_Texture* mouseOverlay;
+extern SDL_Texture* shipFront;
+extern SDL_Texture* shipMiddle;
+extern SDL_Texture* shipBack;
+extern SDL_Texture* hitOverlay;
+extern SDL_Texture* missedOverlay;
+extern Ship* destroyer;
+extern Ship* submarine;
+extern Ship* cruiser;
+extern Ship* battleship;
+extern Ship* carrier;
+extern Ship* globalShips[NUMBER_OF_SHIPS];
+extern Ship* ships[NUMBER_OF_SHIPS];
+extern TTF_Font* mainFont;
+extern SDL_Texture** gridColLabels;
+extern SDL_Texture** gridRowLabels;
+extern int screenWidth;
+extern int screenHeight;
+extern int squareWidth;
+extern int squareHeight;
+extern int cols;
+extern int rows;
+extern unsigned char currentShip;
+extern unsigned char currentScene;
+extern SDL_Thread* networkThread;
+extern char* serverAddress;
+extern long int serverPort;
+extern TCPsocket serverSocket;
+extern SDLNet_SocketSet socketSet;
+extern char opponentNickname[64];
 typedef struct {
     char** map;
     SDL_mutex* mutex;
 } Hitmap;
-Hitmap* ownHitmap;
-Hitmap* opponentHitmap;
+extern Hitmap* ownHitmap;
+extern Hitmap* opponentHitmap;
 
 // Game state flag data
 #define STOP_RUNNING 0x1

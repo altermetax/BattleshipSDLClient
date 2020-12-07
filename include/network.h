@@ -22,7 +22,7 @@ enum HittingStateEnum {
     END
 };
 
-struct {
+typedef struct {
     SDL_mutex* mutex;
     enum NetworkStateEnum state;
     enum HittingStateEnum hittingState;
@@ -30,7 +30,9 @@ struct {
     char clientInfo;
     int x;
     int y;
-} networkState;
+} NetworkState;
+
+extern NetworkState networkState;
 
 void initNetwork();
 int networkMain(void* data);

@@ -7,6 +7,8 @@
 #include "network.h"
 #include "globals.h"
 
+NetworkState networkState;
+
 // Initializes the network part of the application.
 void initNetwork() {
     if(SDLNet_Init() != 0) {
@@ -167,7 +169,7 @@ void runRequest(const char* message, char* response, int maxResponseLength) {
 // Runs the hello request, to be sent as soon as connected to the server.
 char runHelloRequest() { // Returns 0 if not matched yet, 1 if already matched
     char helloMessage[256];
-    sprintf(helloMessage, "hello\r\nversion " PROTOCOL_VERSION "\r\nname " NICKNAME "\r\nrows %d\r\ncols %d\r\n\r\n", rows, cols);
+    sprintf(helloMessage, "hello\r\nversion " PROTOCOL_VERSION "\r\nname %s\r\nrows %d\r\ncols %d\r\n\r\n", nickname, rows, cols);
 
     char serverResponse[512];
     runRequest(helloMessage, serverResponse, 512);
