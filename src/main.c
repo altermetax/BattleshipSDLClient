@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
 		if(argc == 2) { // Only nickname provided
 			serverAddress = "localhost";
 			serverPort = 9098;
-			printf("Using default server localhost:9098\nUse %s <address> <port> for custom server.\n", argv[0]);
+			printf("Using default server localhost:9098\nUse %s <nickname> <address> <port> for custom server.\n", argv[0]);
 		}
 		else {
 			serverAddress = argv[2];
