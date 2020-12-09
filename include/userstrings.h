@@ -11,7 +11,7 @@
 #define WAIT_SHIPS_MSG "Waiting for %s to finish placing their ships..."
 #define ATTACK_MSG "It's your turn. Attack by moving the mouse on the opponent's field."
 #define ATTACK_ONGRID_MSG "Click to attack %c%d"
-#define WAIT_TURN_MSG "It's your %s's turn."
+#define WAIT_TURN_MSG "It's %s's turn."
 #define YOU_WIN_MSG "You win!"
 #define YOU_LOSE_MSG "You lose"
 #endif
